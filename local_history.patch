@@ -1,0 +1,126 @@
+Index: app/src/main/res/layout/activity_insert.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/activity_insert.xml	(date 1564893472579)
++++ app/src/main/res/layout/activity_insert.xml	(date 1564893472579)
+@@ -10,10 +10,11 @@
+         android:id="@+id/txtTitle"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="@dimen/text_margin_standard"
+-        android:layout_marginEnd="@dimen/text_margin_standard"
+-        android:layout_marginTop="@dimen/text_margin_large"
+-        android:hint="@string/title_hint"
++        android:layout_marginStart="16dp"
++        android:layout_marginEnd="16dp"
++        android:layout_marginTop="8dp"
++        android:ems="10"
++        android:inputType="textPersonName"
+         android:text="Name"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+@@ -23,12 +24,12 @@
+         android:id="@+id/txtPrice"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="@dimen/text_margin_standard"
+-        android:layout_marginEnd="@dimen/text_margin_standard"
+-        android:layout_marginTop="@dimen/text_margin_large"
++        android:layout_marginStart="8dp"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="8dp"
++        android:ems="10"
++        android:inputType="textPersonName"
+         android:text="Name"
+-        android:inputType="numberDecimal"
+-        android:hint="@string/price_hint"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+@@ -37,11 +38,12 @@
+         android:id="@+id/txtDescription"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+-        android:layout_marginStart="@dimen/text_margin_standard"
+-        android:layout_marginEnd="@dimen/text_margin_standard"
+-        android:layout_marginTop="@dimen/text_margin_large"
++        android:layout_marginStart="8dp"
++        android:layout_marginEnd="8dp"
++        android:layout_marginTop="8dp"
++        android:ems="10"
++        android:inputType="textPersonName"
+         android:text="Name"
+-        android:hint="@string/description_hint"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@+id/txtPrice" />
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(date 1564893472565)
++++ app/src/main/res/values/strings.xml	(date 1564893472565)
+@@ -1,7 +1,3 @@
+ <resources>
+     <string name="app_name">Travelmantics</string>
+-    <string name="title_hint">Deal Title</string>
+-    <string name="price_hint">Price (numbers only)</string>
+-    <string name="description_hint">Description</string>
+-    <string name="save_menu">save_menu</string>
+ </resources>
+Index: app/src/main/res/values/dimens.xml
+===================================================================
+--- app/src/main/res/values/dimens.xml	(date 0)
++++ app/src/main/res/values/dimens.xml	(date 0)
+@@ -1,5 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<resources>
+-    <dimen name="text_margin_standard">16dp</dimen>
+-    <dimen name="text_margin_large">24</dimen>
+-</resources>
+\ No newline at end of file
+Index: app/src/main/res/menu/save_menu.xml
+===================================================================
+--- app/src/main/res/menu/save_menu.xml	(date 0)
++++ app/src/main/res/menu/save_menu.xml	(date 0)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="utf-8"?>
+-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+-    xmlns:app="http://schemas.android.com/apk/res-auto">
+-    <item android:id="@+id/save_menu"
+-        android:title="@string/save_menu"
+-        app:showAsAction="always"></item>
+-
+-</menu>
+\ No newline at end of file
+Index: app/src/main/java/com/example/travelmantics/InsertActivity.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/travelmantics/InsertActivity.java	(date 1564893472580)
++++ app/src/main/java/com/example/travelmantics/InsertActivity.java	(date 1564893472580)
+@@ -3,8 +3,6 @@
+ import androidx.appcompat.app.AppCompatActivity;
+ 
+ import android.os.Bundle;
+-import android.view.Menu;
+-import android.view.MenuInflater;
+ 
+ public class InsertActivity extends AppCompatActivity {
+ 
+@@ -13,11 +11,4 @@
+         super.onCreate(savedInstanceState);
+         setContentView(R.layout.activity_insert);
+     }
+-
+-    @Override
+-    public boolean onCreateOptionsMenu(Menu menu) {
+-        MenuInflater inflater = getMenuInflater();
+-        inflater.inflate(R.menu.save_menu, menu);
+-        return true;
+-    }
+ }
